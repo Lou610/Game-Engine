@@ -1,6 +1,7 @@
 using System.IO;
 using Newtonsoft.Json;
 using Engine.Domain.Scene;
+using SceneEntity = Engine.Domain.Scene.Scene;
 
 namespace Engine.Infrastructure.Scene;
 
@@ -9,13 +10,13 @@ namespace Engine.Infrastructure.Scene;
 /// </summary>
 public class SceneSerializer
 {
-    public void Serialize(Scene scene, string filePath)
+    public void Serialize(SceneEntity scene, string filePath)
     {
         var json = JsonConvert.SerializeObject(scene, Formatting.Indented);
         File.WriteAllText(filePath, json);
     }
 
-    public Scene? Deserialize(string filePath)
+    public SceneEntity? Deserialize(string filePath)
     {
         if (!File.Exists(filePath))
         {
@@ -23,7 +24,7 @@ public class SceneSerializer
         }
 
         var json = File.ReadAllText(filePath);
-        return JsonConvert.DeserializeObject<Scene>(json);
+        return JsonConvert.DeserializeObject<SceneEntity>(json);
     }
 }
 

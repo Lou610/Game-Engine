@@ -8,6 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Tests/**" />
+    <EmbeddedResource Remove="Tests/**" />
+    <None Remove="Tests/**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Vulkan.NET" Version="1.0.0" />
     <PackageReference Include="GLFW.NET" Version="0.9.7.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />

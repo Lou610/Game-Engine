@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Engine.Domain.Scene;
 using Engine.Domain.Scene.ValueObjects;
 using Engine.Infrastructure.Logging;
+using SceneEntity = Engine.Domain.Scene.Scene;
 
 namespace Engine.Application.Scene;
 
@@ -10,8 +11,8 @@ namespace Engine.Application.Scene;
 /// </summary>
 public class SceneManager
 {
-    private readonly Dictionary<string, Scene> _scenes = new();
-    private Scene? _activeScene;
+    private readonly Dictionary<string, SceneEntity> _scenes = new();
+    private SceneEntity? _activeScene;
     private readonly Logger _logger;
 
     public SceneManager(Logger logger)
@@ -19,7 +20,7 @@ public class SceneManager
         _logger = logger;
     }
 
-    public void LoadScene(Scene scene)
+    public void LoadScene(SceneEntity scene)
     {
         _scenes[scene.Id.Value] = scene;
         _activeScene = scene;
@@ -38,6 +39,6 @@ public class SceneManager
         }
     }
 
-    public Scene? GetActiveScene() => _activeScene;
+    public SceneEntity? GetActiveScene() => _activeScene;
 }
 

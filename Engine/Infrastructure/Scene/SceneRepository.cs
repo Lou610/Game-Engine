@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Engine.Domain.Scene;
 using Engine.Domain.Scene.ValueObjects;
+using SceneEntity = Engine.Domain.Scene.Scene;
 
 namespace Engine.Infrastructure.Scene;
 
@@ -9,14 +10,14 @@ namespace Engine.Infrastructure.Scene;
 /// </summary>
 public class SceneRepository
 {
-    private readonly Dictionary<string, Scene> _scenes = new();
+    private readonly Dictionary<string, SceneEntity> _scenes = new();
 
-    public void Save(Scene scene)
+    public void Save(SceneEntity scene)
     {
         _scenes[scene.Id.Value] = scene;
     }
 
-    public Scene? Load(SceneId id)
+    public SceneEntity? Load(SceneId id)
     {
         return _scenes.TryGetValue(id.Value, out var scene) ? scene : null;
     }
@@ -26,7 +27,7 @@ public class SceneRepository
         _scenes.Remove(id.Value);
     }
 
-    public IEnumerable<Scene> GetAll()
+    public IEnumerable<SceneEntity> GetAll()
     {
         return _scenes.Values;
     }

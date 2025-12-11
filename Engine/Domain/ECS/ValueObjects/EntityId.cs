@@ -13,7 +13,5 @@ public readonly record struct EntityId
     }
 
     public static EntityId Invalid => new(0);
-    public static bool operator ==(EntityId left, EntityId right) => left.Value == right.Value;
-    public static bool operator !=(EntityId left, EntityId right) => !(left == right);
 }
 
