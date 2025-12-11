@@ -13,12 +13,12 @@ public class AssetDatabase
 
     public void AddMetadata(AssetMetadata metadata)
     {
-        _metadata[metadata.AssetId.Value] = metadata;
+        _metadata[metadata.AssetId] = metadata;
     }
 
     public AssetMetadata? GetMetadata(AssetGuid assetId)
     {
-        return _metadata.TryGetValue(assetId.Value, out var metadata) ? metadata : null;
+        return _metadata.TryGetValue(assetId, out var metadata) ? metadata : null;
     }
 }
 

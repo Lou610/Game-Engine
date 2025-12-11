@@ -4,12 +4,14 @@ using Engine.Infrastructure.Logging;
 using Engine.Infrastructure.Memory;
 using Engine.Infrastructure.Platform;
 
+using System;
+
 namespace Engine.Application;
 
 /// <summary>
 /// Application service orchestrating engine lifecycle
 /// </summary>
-public class Application
+public class Application : IDisposable
 {
     private readonly ConfigurationService _configService;
     private readonly TimeService _timeService;

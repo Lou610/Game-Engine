@@ -44,7 +44,7 @@ public class GameLoop
             while (_accumulator >= fixedTimeStep)
             {
                 FixedUpdate((float)fixedTimeStep);
-                _accumulator -= fixedTimeStep;
+                _accumulator -= (float)fixedTimeStep;
             }
 
             // Variable timestep update

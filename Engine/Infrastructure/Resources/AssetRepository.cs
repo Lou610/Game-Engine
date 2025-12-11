@@ -13,17 +13,17 @@ public class AssetRepository
 
     public void Save(Asset asset)
     {
-        _assets[asset.Id.Value] = asset;
+        _assets[asset.Id] = asset;
     }
 
     public Asset? Load(AssetGuid id)
     {
-        return _assets.TryGetValue(id.Value, out var asset) ? asset : null;
+        return _assets.TryGetValue(id, out var asset) ? asset : null;
     }
 
     public void Delete(AssetGuid id)
     {
-        _assets.Remove(id.Value);
+        _assets.Remove(id);
     }
 
     public IEnumerable<Asset> GetAll()

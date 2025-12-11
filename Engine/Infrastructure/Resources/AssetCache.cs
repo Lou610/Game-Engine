@@ -13,17 +13,17 @@ public class AssetCache
 
     public void Add(Asset asset)
     {
-        _cache[asset.Id.Value] = asset;
+        _cache[asset.Id] = asset;
     }
 
     public Asset? Get(AssetGuid id)
     {
-        return _cache.TryGetValue(id.Value, out var asset) ? asset : null;
+        return _cache.TryGetValue(id, out var asset) ? asset : null;
     }
 
     public void Remove(AssetGuid id)
     {
-        _cache.Remove(id.Value);
+        _cache.Remove(id);
     }
 
     public void Clear()
