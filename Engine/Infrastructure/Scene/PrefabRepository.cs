@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Engine.Domain.Scene;
+using Engine.Domain.Scene.Prefabs;
 using Engine.Domain.Scene.ValueObjects;
 
 namespace Engine.Infrastructure.Scene;

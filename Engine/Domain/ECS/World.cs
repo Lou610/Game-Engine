@@ -229,11 +229,12 @@ public class World : IDisposable
     }
 
     /// <summary>
-    /// Events for entity lifecycle
+    /// Events for entity lifecycle (reserved for future use)
     /// </summary>
-    public event Action<EntityId, Component>? ComponentAdded;
-    public event Action<EntityId, Component>? ComponentRemoved;
-    public event Action<EntityId>? EntityDestroyed;
+    // TODO: Implement event system when needed
+    // public event Action<EntityId, Component>? ComponentAdded;
+    // public event Action<EntityId, Component>? ComponentRemoved;
+    // public event Action<EntityId>? EntityDestroyed;
 
     private void ThrowIfDisposed()
     {
