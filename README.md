@@ -1,4 +1,4 @@
-# Unity-Type Game Engine
+# LAG Game Engine
 
 A full-featured C# game engine built with Domain-Driven Design (DDD) principles, featuring Vulkan rendering, ECS architecture, and support for both C# and Lag scripting languages.
 
