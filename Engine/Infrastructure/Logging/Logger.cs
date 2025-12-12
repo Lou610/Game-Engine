@@ -14,7 +14,14 @@ public class Logger
 
     public Logger(string logFilePath = "engine.log")
     {
-        _logFilePath = logFilePath;
+        // Make log file unique to avoid concurrent access issues during testing
+        var directory = Path.GetDirectoryName(logFilePath) ?? "";
+        var fileNameWithoutExt = Path.GetFileNameWithoutExtension(logFilePath);
+        var extension = Path.GetExtension(logFilePath);
+        var processId = Environment.ProcessId;
+        var threadId = Environment.CurrentManagedThreadId;
+        
+        _logFilePath = Path.Combine(directory, $"{fileNameWithoutExt}_{processId}_{threadId}{extension}");
     }
 
     public void Log(LogLevel level, string message, Exception? exception = null)

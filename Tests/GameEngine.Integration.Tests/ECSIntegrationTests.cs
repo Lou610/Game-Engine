@@ -26,10 +26,10 @@ public class ECSIntegrationTests
         // Act
         var entity = worldService.CreateEntity("TestEntity");
         var transform = new Transform();
-        repository.Save(entity.Id.Value, transform);
+        repository.Save(entity.Id, transform);
 
         // Assert
-        var retrieved = repository.Load<Transform>(entity.Id.Value);
+        var retrieved = repository.Load<Transform>(entity.Id);
         Assert.That(retrieved, Is.Not.Null);
     }
 }
