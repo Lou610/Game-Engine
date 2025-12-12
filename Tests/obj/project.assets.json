@@ -2310,9 +2310,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LAG\\Desktop\\Playground\\Game-Engine\\Tests\\GameEngine.Integration.Tests.csproj",
-      "projectName": "GameEngine.Integration.Tests",
-      "projectPath": "C:\\Users\\LAG\\Desktop\\Playground\\Game-Engine\\Tests\\GameEngine.Integration.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\LAG\\Desktop\\Playground\\Game-Engine\\Tests\\GameEngine.Infrastructure.Tests.csproj",
+      "projectName": "GameEngine.Infrastructure.Tests",
+      "projectPath": "C:\\Users\\LAG\\Desktop\\Playground\\Game-Engine\\Tests\\GameEngine.Infrastructure.Tests.csproj",
       "packagesPath": "C:\\Users\\LAG\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\LAG\\Desktop\\Playground\\Game-Engine\\Tests\\obj\\",
       "projectStyle": "PackageReference",
