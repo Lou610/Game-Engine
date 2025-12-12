@@ -31,13 +31,13 @@ public class EngineDemo
         
         // Add Transform components
         var playerTransform = world.AddComponent<Transform>(player.Id);
-        playerTransform.Position = new Vector3(0, 0, 0);
+        playerTransform.Position = new System.Numerics.Vector3(0, 0, 0);
         
         var enemyTransform = world.AddComponent<Transform>(enemy.Id);
-        enemyTransform.Position = new Vector3(10, 0, 0);
+        enemyTransform.Position = new System.Numerics.Vector3(10, 0, 0);
         
         var powerupTransform = world.AddComponent<Transform>(powerup.Id);
-        powerupTransform.Position = new Vector3(5, 5, 0);
+        powerupTransform.Position = new System.Numerics.Vector3(5, 5, 0);
         
         Console.WriteLine("✅ Added Transform components to all entities");
         

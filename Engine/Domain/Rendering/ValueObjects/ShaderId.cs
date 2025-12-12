@@ -3,15 +3,11 @@ namespace Engine.Domain.Rendering.ValueObjects;
 /// <summary>
 /// Shader identifier
 /// </summary>
-public readonly record struct ShaderId
+public readonly record struct ShaderId(System.Guid Value)
 {
-    public string Value { get; init; }
-
-    public ShaderId(string value)
-    {
-        Value = value;
-    }
-
-    public static ShaderId Invalid => new(string.Empty);
+    public static ShaderId NewId() => new(System.Guid.NewGuid());
+    public static ShaderId Empty => new(System.Guid.Empty);
+    
+    public override string ToString() => Value.ToString();
 }
 

@@ -61,16 +61,16 @@ public class ECSPhase2IntegrationTests
 
         // Add Transform components with different positions
         var playerTransform = _world.AddComponent<Transform>(player.Id);
-        playerTransform.Position = new Engine.Domain.Rendering.ValueObjects.Vector3(0, 0, 0);
+        playerTransform.Position = new System.Numerics.Vector3(0, 0, 0);
 
         var enemy1Transform = _world.AddComponent<Transform>(enemy1.Id);
-        enemy1Transform.Position = new Engine.Domain.Rendering.ValueObjects.Vector3(10, 0, 0);
+        enemy1Transform.Position = new System.Numerics.Vector3(10, 0, 0);
 
         var enemy2Transform = _world.AddComponent<Transform>(enemy2.Id);
-        enemy2Transform.Position = new Engine.Domain.Rendering.ValueObjects.Vector3(-5, 0, 0);
+        enemy2Transform.Position = new System.Numerics.Vector3(-5, 0, 0);
 
         var staticTransform = _world.AddComponent<Transform>(staticObject.Id);
-        staticTransform.Position = new Engine.Domain.Rendering.ValueObjects.Vector3(100, 0, 0);
+        staticTransform.Position = new System.Numerics.Vector3(100, 0, 0);
 
         // Add Movable component to moving entities (but not static object)
         _world.AddComponent<Movable>(player.Id, new Movable { Speed = 5.0f });
@@ -186,7 +186,7 @@ public class ECSPhase2IntegrationTests
             foreach (var (entity, transform, movable) in GetEntitiesWithComponents<Transform, Movable>())
             {
                 // Move the entity forward based on its speed
-                transform.Position = new Engine.Domain.Rendering.ValueObjects.Vector3(
+                transform.Position = new System.Numerics.Vector3(
                     transform.Position.X + movable.Speed * deltaTime,
                     transform.Position.Y,
                     transform.Position.Z

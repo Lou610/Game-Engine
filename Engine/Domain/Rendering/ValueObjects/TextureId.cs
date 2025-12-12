@@ -3,15 +3,11 @@ namespace Engine.Domain.Rendering.ValueObjects;
 /// <summary>
 /// Texture identifier
 /// </summary>
-public readonly record struct TextureId
+public readonly record struct TextureId(System.Guid Value)
 {
-    public string Value { get; init; }
-
-    public TextureId(string value)
-    {
-        Value = value;
-    }
-
-    public static TextureId Invalid => new(string.Empty);
+    public static TextureId NewId() => new(System.Guid.NewGuid());
+    public static TextureId Empty => new(System.Guid.Empty);
+    
+    public override string ToString() => Value.ToString();
 }
 

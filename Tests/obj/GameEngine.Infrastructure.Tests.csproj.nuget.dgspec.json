@@ -54,10 +54,6 @@
               "target": "Package",
               "version": "[4.13.1, )"
             },
-            "GLFW.NET": {
-              "target": "Package",
-              "version": "[0.9.7.1, )"
-            },
             "Microsoft.CodeAnalysis.CSharp": {
               "target": "Package",
               "version": "[4.8.0, )"
@@ -70,9 +66,25 @@
               "target": "Package",
               "version": "[4.8.2, )"
             },
-            "Vulkan.NET": {
+            "Silk.NET.Core": {
               "target": "Package",
-              "version": "[1.0.0, )"
+              "version": "[2.21.0, )"
+            },
+            "Silk.NET.Input": {
+              "target": "Package",
+              "version": "[2.21.0, )"
+            },
+            "Silk.NET.Vulkan": {
+              "target": "Package",
+              "version": "[2.21.0, )"
+            },
+            "Silk.NET.Windowing": {
+              "target": "Package",
+              "version": "[2.21.0, )"
+            },
+            "System.Numerics.Vectors": {
+              "target": "Package",
+              "version": "[4.5.0, )"
             }
           },
           "imports": [

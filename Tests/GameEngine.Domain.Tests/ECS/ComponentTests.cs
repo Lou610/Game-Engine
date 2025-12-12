@@ -3,6 +3,7 @@ using Engine.Domain.ECS;
 using Engine.Domain.ECS.Components;
 using Engine.Domain.ECS.ValueObjects;
 using Engine.Domain.Rendering.ValueObjects;
+using System.Numerics;
 
 namespace GameEngine.Domain.Tests.ECS;
 
@@ -16,9 +17,9 @@ public class ComponentTests
         var transform = new Transform();
 
         // Assert
-        Assert.That(transform.Position, Is.EqualTo(Vector3.Zero));
-        Assert.That(transform.Rotation, Is.EqualTo(Vector3.Zero));
-        Assert.That(transform.Scale, Is.EqualTo(Vector3.One));
+        Assert.That(transform.Position, Is.EqualTo(System.Numerics.Vector3.Zero));
+        Assert.That(transform.Rotation, Is.EqualTo(Quaternion.Identity));
+        Assert.That(transform.Scale, Is.EqualTo(System.Numerics.Vector3.One));
     }
 }
 
