@@ -43,6 +43,11 @@ public class Scene : Entity
     public SceneSettings Settings { get; set; }
 
     /// <summary>
+    /// Asset registry for tracking scene dependencies
+    /// </summary>
+    public AssetRegistry Assets { get; private set; }
+
+    /// <summary>
     /// Scene metadata (tags, description, etc.)
     /// </summary>
     public IReadOnlyDictionary<string, object> Metadata => _metadata;
@@ -121,6 +126,7 @@ public class Scene : Entity
         _metadata = new Dictionary<string, object>();
         SceneGraph = new SceneGraph();
         Entities = new World();
+        Assets = new AssetRegistry();
         Settings = new SceneSettings();
         CreatedAt = DateTime.UtcNow;
         ModifiedAt = DateTime.UtcNow;

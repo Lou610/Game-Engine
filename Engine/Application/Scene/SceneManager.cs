@@ -8,6 +8,7 @@ using Engine.Domain.Scene.Serialization;
 using Engine.Domain.ECS;
 using Engine.Domain.Core.Services;
 using Engine.Infrastructure.Logging;
+using Engine.Infrastructure.Scene;
 using SceneEntity = Engine.Domain.Scene.Scene;
 
 namespace Engine.Application.Scene;
@@ -22,6 +23,7 @@ public class SceneManager : IService, IDisposable
     private readonly Logger _logger;
     private readonly IServiceProvider _serviceProvider;
     private readonly ISceneSerializer _serializer;
+    private readonly SceneAssetService _assetService;
     private readonly object _lock = new object();
     private bool _disposed = false;
 
@@ -82,11 +84,12 @@ public class SceneManager : IService, IDisposable
         } 
     }
 
-    public SceneManager(Logger logger, IServiceProvider serviceProvider, ISceneSerializer? serializer = null)
+    public SceneManager(Logger logger, IServiceProvider serviceProvider, SceneAssetService assetService, ISceneSerializer? serializer = null)
     {
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         _serviceProvider = serviceProvider ?? throw new ArgumentNullException(nameof(serviceProvider));
-        _serializer = serializer ?? new FileSceneSerializer();
+        _assetService = assetService ?? throw new ArgumentNullException(nameof(assetService));
+        _serializer = serializer ?? new SceneSerializer();
         _loadedScenes = new Dictionary<string, SceneEntity>();
     }
 
@@ -178,6 +181,10 @@ public class SceneManager : IService, IDisposable
         {
             _loadedScenes[scene.Name] = scene;
             _activeScene = scene;
+            
+            // Load scene assets
+            LoadSceneAssets(scene);
+            
             _logger.Info($"Scene loaded: {scene.Name}");
             SceneLoaded?.Invoke(scene);
         }
@@ -212,6 +219,9 @@ public class SceneManager : IService, IDisposable
             var sceneEntry = _loadedScenes.FirstOrDefault(kvp => kvp.Value == scene);
             if (sceneEntry.Key == null)
                 return;
+
+            // Unload scene assets
+            _assetService.UnloadSceneAssets(scene.Id.Value);
 
             // If this is the active scene, clear it
             if (_activeScene == scene)
@@ -572,16 +582,16 @@ public class SceneManager : IService, IDisposable
     /// </summary>
     /// <param name="scenePath">Path to the scene file</param>
     /// <returns>Scene metadata</returns>
-    public async Task<SceneMetadata> GetSceneMetadataAsync(string scenePath)
+    public async Task<Engine.Domain.Scene.Serialization.SceneMetadata> GetSceneMetadataAsync(string scenePath)
     {
-        if (_serializer is FileSceneSerializer fileSerializer)
+        if (_serializer is SceneSerializer fileSerializer)
         {
             return await fileSerializer.GetSceneMetadataAsync(scenePath);
         }
         
         // Fallback: load the full scene to get metadata
         var scene = await LoadSceneAsync(scenePath);
-        return new SceneMetadata
+        return new Engine.Domain.Scene.Serialization.SceneMetadata
         {
             Id = scene.Id.Value,
             Name = scene.Name,
@@ -595,15 +605,15 @@ public class SceneManager : IService, IDisposable
     /// </summary>
     /// <param name="scenePath">Path to the scene file</param>
     /// <returns>Validation result</returns>
-    public async Task<SceneValidationResult> ValidateSceneAsync(string scenePath)
+    public async Task<Engine.Domain.Scene.Serialization.SceneValidationResult> ValidateSceneAsync(string scenePath)
     {
-        if (_serializer is FileSceneSerializer fileSerializer)
+        if (_serializer is SceneSerializer fileSerializer)
         {
             return await fileSerializer.ValidateSceneAsync(scenePath);
         }
 
         // Basic validation
-        var result = new SceneValidationResult { IsValid = true, Errors = new List<string>() };
+        var result = new Engine.Domain.Scene.Serialization.SceneValidationResult { IsValid = true, Errors = new List<string>() };
         
         try
         {
@@ -650,6 +660,42 @@ public class SceneManager : IService, IDisposable
             {
                 _logger.Error($"Auto-save failed for scene '{activeScene.Name}': {ex.Message}");
             }
+        }
+    }
+
+    #endregion
+
+    #region Asset Management
+
+    /// <summary>
+    /// Load all assets referenced by a scene
+    /// </summary>
+    /// <param name="scene">Scene to load assets for</param>
+    private async void LoadSceneAssets(SceneEntity scene)
+    {
+        try
+        {
+            // Load assets referenced in the scene's asset registry
+            foreach (var assetId in scene.Assets.AssetIds)
+            {
+                if (!_assetService.IsAssetLoaded(assetId))
+                {
+                    // For now, we'll register the asset without loading data
+                    // This will be enhanced in future phases with actual asset loading
+                    var asset = scene.Assets.GetAsset(assetId);
+                    if (asset != null)
+                    {
+                        _assetService.RegisterAsset(assetId, asset, scene.Id.Value);
+                        _logger.Debug($"Registered asset '{asset.Name}' ({assetId.Value}) for scene '{scene.Name}'");
+                    }
+                }
+            }
+
+            _logger.Debug($"Loaded {scene.Assets.TotalAssetCount} assets for scene '{scene.Name}'");
+        }
+        catch (Exception ex)
+        {
+            _logger.Error($"Failed to load assets for scene '{scene.Name}': {ex.Message}");
         }
     }
 
