@@ -12,7 +12,7 @@ public abstract class System
     /// <summary>
     /// The world this system operates on
     /// </summary>
-    public World World { get; private set; }
+    public World? World { get; private set; }
     
     /// <summary>
     /// System execution priority (lower numbers execute first)

@@ -61,6 +61,34 @@ public class Transform : Component
     /// Up direction vector
     /// </summary>
     public Vector3 Up => Vector3.Transform(Vector3.UnitY, Rotation);
+
+    /// <summary>
+    /// Identity transform (zero position, identity rotation, unit scale)
+    /// </summary>
+    public static Transform Identity => new Transform();
+
+    /// <summary>
+    /// Combine two transforms (parent * child)
+    /// </summary>
+    public static Transform Combine(Transform parent, Transform child)
+    {
+        if (parent == null) return child;
+        if (child == null) return parent;
+
+        var combinedPosition = parent.Position + Vector3.Transform(child.Position, parent.Rotation);
+        var combinedRotation = parent.Rotation * child.Rotation;
+        var combinedScale = parent.Scale * child.Scale;
+
+        return new Transform(combinedPosition, combinedRotation, combinedScale);
+    }
+
+    /// <summary>
+    /// Create a copy of this transform
+    /// </summary>
+    public Transform Clone()
+    {
+        return new Transform(Position, Rotation, Scale);
+    }
 }
 
 
