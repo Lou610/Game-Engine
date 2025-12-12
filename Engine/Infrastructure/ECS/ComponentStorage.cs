@@ -214,14 +214,17 @@ public class ComponentStorage : IDisposable
         
         if (_entityToArchetype.TryGetValue(entityId, out var currentArchetype))
         {
-            // Get all existing components
-            foreach (var componentType in targetArchetype.GetComponentTypes())
+            // Get all existing components from current archetype
+            foreach (var componentType in currentArchetype.GetComponentTypes())
             {
                 if (newComponent != null && componentType == newComponent.GetType())
                     continue; // Skip the new component, we'll add it separately
                     
-                var existingComponent = currentArchetype.GetComponent<Component>(entityId);
-                if (existingComponent != null)
+                // Use reflection to call GetComponent<T> with the correct type
+                var method = typeof(Archetype).GetMethod("GetComponent")!.MakeGenericMethod(componentType);
+                var existingComponent = method.Invoke(currentArchetype, new object[] { entityId }) as Component;
+                
+                if (existingComponent != null && targetArchetype.GetComponentTypes().Contains(componentType))
                 {
                     components.Add(existingComponent);
                 }
