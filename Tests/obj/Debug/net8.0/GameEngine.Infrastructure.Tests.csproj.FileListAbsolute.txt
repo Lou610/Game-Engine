@@ -142,3 +142,6 @@ C:\Users\LAG\Desktop\Playground\Game-Engine\Tests\obj\Debug\net8.0\refint\GameEn
 C:\Users\LAG\Desktop\Playground\Game-Engine\Tests\obj\Debug\net8.0\GameEngine.Infrastructure.Tests.pdb
 C:\Users\LAG\Desktop\Playground\Game-Engine\Tests\obj\Debug\net8.0\GameEngine.Infrastructure.Tests.genruntimeconfig.cache
 C:\Users\LAG\Desktop\Playground\Game-Engine\Tests\obj\Debug\net8.0\ref\GameEngine.Infrastructure.Tests.dll
+C:\Users\LAG\Desktop\Playground\Game-Engine\Tests\bin\Debug\net8.0\GameEngine.deps.json
+C:\Users\LAG\Desktop\Playground\Game-Engine\Tests\bin\Debug\net8.0\GameEngine.runtimeconfig.json
+C:\Users\LAG\Desktop\Playground\Game-Engine\Tests\bin\Debug\net8.0\GameEngine.exe
