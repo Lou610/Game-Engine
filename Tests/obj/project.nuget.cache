@@ -1,17 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "euRhV7LnVRQ=",
+  "dgSpecHash": "F7Z96PjQ/Tk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\LAG\\Desktop\\Playground\\Game-Engine\\Tests\\GameEngine.Infrastructure.Tests.csproj",
+  "projectFilePath": "C:\\Users\\LAG\\Desktop\\Playground\\Game-Engine\\Tests\\GameEngine.Domain.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LAG\\.nuget\\packages\\antlr4.runtime.standard\\4.13.1\\antlr4.runtime.standard.4.13.1.nupkg.sha512",
     "C:\\Users\\LAG\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\LAG\\.nuget\\packages\\fluentassertions\\6.12.0\\fluentassertions.6.12.0.nupkg.sha512",
-    "C:\\Users\\LAG\\.nuget\\packages\\glfw.net\\0.9.7.1\\glfw.net.0.9.7.1.nupkg.sha512",
     "C:\\Users\\LAG\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.4\\microsoft.codeanalysis.analyzers.3.3.4.nupkg.sha512",
     "C:\\Users\\LAG\\.nuget\\packages\\microsoft.codeanalysis.common\\4.8.0\\microsoft.codeanalysis.common.4.8.0.nupkg.sha512",
     "C:\\Users\\LAG\\.nuget\\packages\\microsoft.codeanalysis.csharp\\4.8.0\\microsoft.codeanalysis.csharp.4.8.0.nupkg.sha512",
     "C:\\Users\\LAG\\.nuget\\packages\\microsoft.codecoverage\\17.8.0\\microsoft.codecoverage.17.8.0.nupkg.sha512",
+    "C:\\Users\\LAG\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\LAG\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\3.1.6\\microsoft.dotnet.platformabstractions.3.1.6.nupkg.sha512",
+    "C:\\Users\\LAG\\.nuget\\packages\\microsoft.extensions.dependencymodel\\8.0.0\\microsoft.extensions.dependencymodel.8.0.0.nupkg.sha512",
     "C:\\Users\\LAG\\.nuget\\packages\\microsoft.net.test.sdk\\17.8.0\\microsoft.net.test.sdk.17.8.0.nupkg.sha512",
     "C:\\Users\\LAG\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\LAG\\.nuget\\packages\\microsoft.testplatform.objectmodel\\17.8.0\\microsoft.testplatform.objectmodel.17.8.0.nupkg.sha512",
@@ -25,26 +27,31 @@
     "C:\\Users\\LAG\\.nuget\\packages\\opentk.audio.openal\\4.8.2\\opentk.audio.openal.4.8.2.nupkg.sha512",
     "C:\\Users\\LAG\\.nuget\\packages\\opentk.core\\4.8.2\\opentk.core.4.8.2.nupkg.sha512",
     "C:\\Users\\LAG\\.nuget\\packages\\opentk.mathematics\\4.8.2\\opentk.mathematics.4.8.2.nupkg.sha512",
+    "C:\\Users\\LAG\\.nuget\\packages\\silk.net.core\\2.21.0\\silk.net.core.2.21.0.nupkg.sha512",
+    "C:\\Users\\LAG\\.nuget\\packages\\silk.net.glfw\\2.21.0\\silk.net.glfw.2.21.0.nupkg.sha512",
+    "C:\\Users\\LAG\\.nuget\\packages\\silk.net.input\\2.21.0\\silk.net.input.2.21.0.nupkg.sha512",
+    "C:\\Users\\LAG\\.nuget\\packages\\silk.net.input.common\\2.21.0\\silk.net.input.common.2.21.0.nupkg.sha512",
+    "C:\\Users\\LAG\\.nuget\\packages\\silk.net.input.glfw\\2.21.0\\silk.net.input.glfw.2.21.0.nupkg.sha512",
+    "C:\\Users\\LAG\\.nuget\\packages\\silk.net.input.sdl\\2.21.0\\silk.net.input.sdl.2.21.0.nupkg.sha512",
+    "C:\\Users\\LAG\\.nuget\\packages\\silk.net.maths\\2.21.0\\silk.net.maths.2.21.0.nupkg.sha512",
+    "C:\\Users\\LAG\\.nuget\\packages\\silk.net.sdl\\2.21.0\\silk.net.sdl.2.21.0.nupkg.sha512",
+    "C:\\Users\\LAG\\.nuget\\packages\\silk.net.vulkan\\2.21.0\\silk.net.vulkan.2.21.0.nupkg.sha512",
+    "C:\\Users\\LAG\\.nuget\\packages\\silk.net.windowing\\2.21.0\\silk.net.windowing.2.21.0.nupkg.sha512",
+    "C:\\Users\\LAG\\.nuget\\packages\\silk.net.windowing.common\\2.21.0\\silk.net.windowing.common.2.21.0.nupkg.sha512",
+    "C:\\Users\\LAG\\.nuget\\packages\\silk.net.windowing.glfw\\2.21.0\\silk.net.windowing.glfw.2.21.0.nupkg.sha512",
+    "C:\\Users\\LAG\\.nuget\\packages\\silk.net.windowing.sdl\\2.21.0\\silk.net.windowing.sdl.2.21.0.nupkg.sha512",
     "C:\\Users\\LAG\\.nuget\\packages\\system.collections.immutable\\7.0.0\\system.collections.immutable.7.0.0.nupkg.sha512",
     "C:\\Users\\LAG\\.nuget\\packages\\system.configuration.configurationmanager\\4.4.0\\system.configuration.configurationmanager.4.4.0.nupkg.sha512",
     "C:\\Users\\LAG\\.nuget\\packages\\system.diagnostics.eventlog\\6.0.0\\system.diagnostics.eventlog.6.0.0.nupkg.sha512",
+    "C:\\Users\\LAG\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\LAG\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\LAG\\.nuget\\packages\\system.reflection.metadata\\7.0.0\\system.reflection.metadata.7.0.0.nupkg.sha512",
     "C:\\Users\\LAG\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\LAG\\.nuget\\packages\\system.security.cryptography.protecteddata\\4.4.0\\system.security.cryptography.protecteddata.4.4.0.nupkg.sha512",
-    "C:\\Users\\LAG\\.nuget\\packages\\vulkan.net\\1.0.0\\vulkan.net.1.0.0.nupkg.sha512"
+    "C:\\Users\\LAG\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
+    "C:\\Users\\LAG\\.nuget\\packages\\system.text.json\\8.0.0\\system.text.json.8.0.0.nupkg.sha512",
+    "C:\\Users\\LAG\\.nuget\\packages\\ultz.native.glfw\\3.4.0\\ultz.native.glfw.3.4.0.nupkg.sha512",
+    "C:\\Users\\LAG\\.nuget\\packages\\ultz.native.sdl\\2.30.1\\ultz.native.sdl.2.30.1.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "message": "Package 'GLFW.NET 0.9.7.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
-      "projectPath": "C:\\Users\\LAG\\Desktop\\Playground\\Game-Engine\\Tests\\GameEngine.Infrastructure.Tests.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\LAG\\Desktop\\Playground\\Game-Engine\\Tests\\GameEngine.Infrastructure.Tests.csproj",
-      "libraryId": "GLFW.NET",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  "logs": []
 }

@@ -12,17 +12,17 @@ public class ShaderRepository
 
     public void Save(ShaderId id, string shaderSource)
     {
-        _shaders[id.Value] = shaderSource;
+        _shaders[id.Value.ToString()] = shaderSource;
     }
 
     public string? Load(ShaderId id)
     {
-        return _shaders.TryGetValue(id.Value, out var source) ? source : null;
+        return _shaders.TryGetValue(id.Value.ToString(), out var source) ? source : null;
     }
 
     public void Delete(ShaderId id)
     {
-        _shaders.Remove(id.Value);
+        _shaders.Remove(id.Value.ToString());
     }
 }
 
