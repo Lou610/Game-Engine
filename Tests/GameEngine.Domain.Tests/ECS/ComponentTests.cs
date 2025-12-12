@@ -2,6 +2,7 @@ using NUnit.Framework;
 using Engine.Domain.ECS;
 using Engine.Domain.ECS.Components;
 using Engine.Domain.ECS.ValueObjects;
+using Engine.Domain.Rendering.ValueObjects;
 
 namespace GameEngine.Domain.Tests.ECS;
 

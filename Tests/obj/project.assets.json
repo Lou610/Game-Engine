@@ -2310,9 +2310,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LAG\\Desktop\\Playground\\Game-Engine\\Tests\\GameEngine.Application.Tests.csproj",
-      "projectName": "GameEngine.Application.Tests",
-      "projectPath": "C:\\Users\\LAG\\Desktop\\Playground\\Game-Engine\\Tests\\GameEngine.Application.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\LAG\\Desktop\\Playground\\Game-Engine\\Tests\\GameEngine.Integration.Tests.csproj",
+      "projectName": "GameEngine.Integration.Tests",
+      "projectPath": "C:\\Users\\LAG\\Desktop\\Playground\\Game-Engine\\Tests\\GameEngine.Integration.Tests.csproj",
       "packagesPath": "C:\\Users\\LAG\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\LAG\\Desktop\\Playground\\Game-Engine\\Tests\\obj\\",
       "projectStyle": "PackageReference",
@@ -2394,7 +2394,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   },

@@ -22,7 +22,7 @@ public class EntityLifecycleService
 
     public EntityDestroyed DestroyEntity(EntityId id)
     {
-        var evt = new EntityDestroyed(id);
+        var evt = new EntityDestroyed(id, $"Entity_{id.Value}");
         _destroyedEvents.Add(evt);
         return evt;
     }
